@@ -1,7 +1,38 @@
 extends layout/_layout
 
 block content
-    h1 Hello world
+    .container
+        form#select-form(action="_blank" method="GET" )
+            select#select-box(name="SB")
+                option(value="p" selected='selected') profile
+                option(value="s") settings
+                option(value="cp") change Password
+                option(value="lo") logout
 
+            button#dd(type='button')
+                img#img(src='/icons/profile.svg')
+                p profile
+                span
+                    img(src='/icons/dd.svg')
+
+            div#list-item.hide
+                .img-top
+                    .icon
+                        include ../../assets/icons/dd-t.svg
+                ul
+                    li
+                        .pad5
+                            img(src='/icons/settings.svg')
+                            p Settings
+                    li
+                        .pad5
+                            img(src='/icons/password.svg')
+                            p changePassword
+                    li
+                        .pad5
+                            img(src='/icons/logout.svg')
+                            p logout
+
+            button#submit submit
 block scripts
     script(src='build.js')

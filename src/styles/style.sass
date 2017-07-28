@@ -1,1 +1,103 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700')
+
+$green: #009688
+
+html
+    background: #263238
+    font-family: 'Open Sans', sans-serif
+
+.container
+    display: flex
+    flex-direction: row
+    form
+        width: 30%
+        margin: auto
+        display: flex
+        flex-direction: column
+        button
+            border: none
+            color: white
+            margin-top: 50px
+            padding: 5px
+            background: $green
+            border-radius: 2.5px
+            text-transform: uppercase
+            opacity: .7
+            &:hover
+                opacity: 1
+                cursor: pointer
+                transition: .17s ease-in-out
+
+
+#dd
+    display: inline-flex
+    opacity: 1
+    padding: 5%
+    margin-top: 0
+    outline: none
+    &.active
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+    p
+        width: 100%
+        margin: auto
+        margin-left: 5% !important
+        text-align: left
+    span
+        margin-left: auto
+
+.pad5
+    padding: 5%
+
+#list-item
+    border-radius: 2.5px
+    margin-top: 20px
+    color: white
+    opacity: 1
+    &.hide
+        display: none !important
+        opacity: 0
+        transition: all 2s ease-in
+    .img-top
+        margin-bottom: -10px
+        .icon
+            width: 100%
+            display: flex
+            flex-direction: row-reverse
+            & > *
+                padding-right: 5%
+                fill: $green
+    ul
+        border-radius: 2.5px
+        margin: 0
+        padding-left: 0
+        list-style: none
+        background-color: $green
+        li
+            background-color: $green
+            animation: drop .2s
+            animation-fill-mode: forwards
+            width: 100%
+            flex-direction: row
+            border-radius: 2.5px
+            & > *
+                display: inline-flex
+            &:hover
+                background-color: darken($green, 3)
+            p
+                margin-left: 5%
+                width: auto
+.hidden
+    display: none
+
+@keyframes drop
+    from
+        top: 0
+    70%
+        top: 165px
+        animation-timing-function: ease-in
+    to
+        top: 150px
+        animation-timing-function: ease-out
+
+
