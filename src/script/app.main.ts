@@ -18,7 +18,7 @@ function transSelectBox() {
 function createDD(){
     const replace = document.createElement('div');
     replace.id = 'replace';
-    let iconRoot = '/icons/';
+    let iconRoot = './icons/';
 
     //create button
     const dd = document.createElement('button');
