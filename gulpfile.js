@@ -8,6 +8,8 @@ var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer'),
     sass = require('gulp-sass'),
     ts = require('gulp-typescript'),
+    uglify = require('gulp-uglify'),
+    sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync');
 
 /*
@@ -28,6 +30,9 @@ gulp.task('ts', function () {
             noImplicitAny: true,
             outFile: 'build.js'
         }))
+        .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.public));
 });
 
